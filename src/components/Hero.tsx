@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg"
-            onClick={() => scrollToSection('#get-involved')}
+            onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
             className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
           >
             Join Us

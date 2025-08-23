@@ -1,5 +1,6 @@
 import Navigation from "@/components/ui/navigation";
 import Hero from "@/components/Hero";
+import CommunitySection from "@/components/CommunitySection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -119,6 +120,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Community Section */}
+      <CommunitySection />
+
       {/* Get Involved Section */}
       <section id="get-involved" className="py-20 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,8 +143,11 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Register Now
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
+                >
+                  Join WhatsApp Group
                 </Button>
               </CardContent>
             </Card>
