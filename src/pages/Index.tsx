@@ -123,6 +123,79 @@ const Index = () => {
       {/* Community Section */}
       <CommunitySection />
 
+      {/* News & Updates Section */}
+      <section id="news-updates" className="py-20 bg-gradient-to-b from-primary/5 to-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              News & Updates
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Stay informed about our latest activities, upcoming events, and community success stories.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden hover:shadow-strong transition-shadow duration-300">
+              <div className="h-48 bg-gradient-to-br from-accent to-primary"></div>
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Clean-Up Event</Badge>
+                <CardTitle className="text-xl">Community Clean-Up Drive - January 2025</CardTitle>
+                <CardDescription>
+                  Join us this Saturday for our monthly community clean-up in Tassia. Together we'll make our neighborhood cleaner and greener.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">📅 January 25, 2025 • 8:00 AM</p>
+                <Button variant="outline" className="w-full">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-strong transition-shadow duration-300">
+              <div className="h-48 bg-gradient-to-br from-secondary to-accent"></div>
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Success Story</Badge>
+                <CardTitle className="text-xl">50 Trees Planted in December</CardTitle>
+                <CardDescription>
+                  Our youth team successfully planted 50 indigenous trees along the riverside, contributing to a greener Tassia community.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">📅 December 2024</p>
+                <Button variant="outline" className="w-full">
+                  Read Story
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-strong transition-shadow duration-300">
+              <div className="h-48 bg-gradient-to-br from-primary to-secondary"></div>
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Training Program</Badge>
+                <CardTitle className="text-xl">Youth Skills Development Workshop</CardTitle>
+                <CardDescription>
+                  Free entrepreneurship and digital skills training for Tassia youth. Registration now open for February cohort.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">📅 February 2025 • Applications Open</p>
+                <Button variant="outline" className="w-full">
+                  Apply Now
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="px-8">
+              View All Updates
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Get Involved Section */}
       <section id="get-involved" className="py-20 bg-gradient-to-b from-background to-primary/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
