@@ -1,16 +1,37 @@
+import { useState } from "react";
 import Navigation from "@/components/ui/navigation";
 import Hero from "@/components/Hero";
 import CommunitySection from "@/components/CommunitySection";
+import ApplicationForm from "@/components/ApplicationForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
+  const [applicationForm, setApplicationForm] = useState({
+    isOpen: false,
+    programTitle: ""
+  });
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  };
+
+  const openApplicationForm = (programTitle: string) => {
+    setApplicationForm({
+      isOpen: true,
+      programTitle
+    });
+  };
+
+  const closeApplicationForm = () => {
+    setApplicationForm({
+      isOpen: false,
+      programTitle: ""
+    });
   };
 
   return (
@@ -181,7 +202,11 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">📅 February 2025 • Applications Open</p>
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => openApplicationForm("Youth Skills Development Workshop")}
+                >
                   Apply Now
                 </Button>
               </CardContent>
@@ -296,7 +321,7 @@ const Index = () => {
           
           <Button 
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground px-12 py-4 text-lg font-semibold"
+            className="bg-green-600 hover:bg-green-700 text-white px-12 py-4 text-lg font-semibold"
           >
             Donate Now
           </Button>
@@ -415,6 +440,56 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Gallery Section with Community Photos */}
+      <section id="gallery" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Community</h2>
+            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              See the faces and places that make Tassia Riverside Community special.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
+              <img 
+                src="/lovable-uploads/025f7344-abc0-4523-81fe-3b8d14462429.png" 
+                alt="TRC community members in Tassia" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
+              <img 
+                src="/lovable-uploads/675eb095-51c9-4aaa-8747-a81144c2c24f.png" 
+                alt="Community area in Tassia" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
+              <img 
+                src="/lovable-uploads/2d4c09e1-aa8e-41cc-8dce-355759e7ab98.png" 
+                alt="Youth gathering in Tassia community" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
+              <img 
+                src="/lovable-uploads/1392a18b-6802-4f17-ba9d-04803e149d6a.png" 
+                alt="Community members by the riverside" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ApplicationForm 
+        isOpen={applicationForm.isOpen}
+        onClose={closeApplicationForm}
+        programTitle={applicationForm.programTitle}
+      />
     </div>
   );
 };

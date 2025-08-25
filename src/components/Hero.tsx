@@ -40,9 +40,8 @@ const Hero = () => {
           </Button>
           <Button 
             size="lg"
-            variant="outline"
             onClick={() => scrollToSection('#donate')}
-            className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg font-semibold"
+            className="bg-green-600 text-white hover:bg-green-700 px-8 py-3 text-lg font-semibold"
           >
             Donate
           </Button>
