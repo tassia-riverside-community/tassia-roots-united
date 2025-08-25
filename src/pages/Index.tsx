@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Navigation from "@/components/ui/navigation";
 import Hero from "@/components/Hero";
-import CommunitySection from "@/components/CommunitySection";
 import ApplicationForm from "@/components/ApplicationForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const Index = () => {
   const [applicationForm, setApplicationForm] = useState({
@@ -141,8 +141,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Community Section */}
-      <CommunitySection />
 
       {/* News & Updates Section */}
       <section id="news-updates" className="py-20 bg-gradient-to-b from-primary/5 to-background">
@@ -168,7 +166,11 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">📅 January 25, 2025 • 8:00 AM</p>
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
+                >
                   Learn More
                 </Button>
               </CardContent>
@@ -185,7 +187,11 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">📅 December 2024</p>
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
+                >
                   Read Story
                 </Button>
               </CardContent>
@@ -258,7 +264,11 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
+                >
                   Volunteer With Us
                 </Button>
               </CardContent>
@@ -272,7 +282,11 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.open('https://chat.whatsapp.com/Kb9XlJIi1yLGoD12EJ0GxE?mode=ems_copy_t', '_blank')}
+                >
                   Partner With TRC
                 </Button>
               </CardContent>
@@ -325,6 +339,64 @@ const Index = () => {
           >
             Donate Now
           </Button>
+        </div>
+      </section>
+
+      {/* Gallery Section with Community Photos Slideshow */}
+      <section id="gallery" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Community</h2>
+            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              See the faces and places that make Tassia Riverside Community special.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="overflow-hidden rounded-lg shadow-strong">
+                    <img 
+                      src="/lovable-uploads/025f7344-abc0-4523-81fe-3b8d14462429.png" 
+                      alt="TRC community members in Tassia" 
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="overflow-hidden rounded-lg shadow-strong">
+                    <img 
+                      src="/lovable-uploads/675eb095-51c9-4aaa-8747-a81144c2c24f.png" 
+                      alt="Community area in Tassia" 
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="overflow-hidden rounded-lg shadow-strong">
+                    <img 
+                      src="/lovable-uploads/2d4c09e1-aa8e-41cc-8dce-355759e7ab98.png" 
+                      alt="Youth gathering in Tassia community" 
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="overflow-hidden rounded-lg shadow-strong">
+                    <img 
+                      src="/lovable-uploads/1392a18b-6802-4f17-ba9d-04803e149d6a.png" 
+                      alt="Community members by the riverside" 
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
         </div>
       </section>
 
@@ -441,51 +513,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Gallery Section with Community Photos */}
-      <section id="gallery" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Community</h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              See the faces and places that make Tassia Riverside Community special.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/lovable-uploads/025f7344-abc0-4523-81fe-3b8d14462429.png" 
-                alt="TRC community members in Tassia" 
-                className="w-full h-64 object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/lovable-uploads/675eb095-51c9-4aaa-8747-a81144c2c24f.png" 
-                alt="Community area in Tassia" 
-                className="w-full h-64 object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/lovable-uploads/2d4c09e1-aa8e-41cc-8dce-355759e7ab98.png" 
-                alt="Youth gathering in Tassia community" 
-                className="w-full h-64 object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-shadow duration-300">
-              <img 
-                src="/lovable-uploads/1392a18b-6802-4f17-ba9d-04803e149d6a.png" 
-                alt="Community members by the riverside" 
-                className="w-full h-64 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ApplicationForm 
+      <ApplicationForm
         isOpen={applicationForm.isOpen}
         onClose={closeApplicationForm}
         programTitle={applicationForm.programTitle}

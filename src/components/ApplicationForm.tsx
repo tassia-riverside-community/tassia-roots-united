@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { X } from "lucide-react";
 
 interface ApplicationFormProps {
   isOpen: boolean;
@@ -43,7 +44,15 @@ const ApplicationForm = ({ isOpen, onClose, programTitle }: ApplicationFormProps
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md relative">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute right-2 top-2 h-8 w-8"
+          onClick={onClose}
+        >
+          <X className="h-4 w-4" />
+        </Button>
         <CardHeader>
           <CardTitle>Apply for {programTitle}</CardTitle>
           <CardDescription>
